@@ -2,8 +2,6 @@
 
 date: 2015-02-18
 title: O filho do rico e o filho do pobre
-summary: |
-  A grande ilusão das pessoas da classe média tradicional (aquilo que as esquerdas chamam de “elite”) que têm hoje de 25 a 45 anos foi o diploma universitário. Disseram-lhes que a prioridade primeira da vida era o ensino superior; que bastava obtê-lo para alcançar um padrão de vida melhor que o de seus pais. [...]
 
 ---
 

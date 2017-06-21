@@ -17,7 +17,11 @@ module.exports = function BlogIndex (props) {
           h('h2', [
             h('a', {href: page.pathname}, page.title)
           ]),
-          page.summary ? h('.summary', page.summary) : null,
+          page.summary ? h('article.summary', [
+            page.summary,
+            ' ',
+            h('a', {href: page.pathname}, '(...)')
+          ]) : null,
           h('p', [
             h('a', {href: page.pathname}, date.abs(new Date(Date.parse(page.date))))
           ])

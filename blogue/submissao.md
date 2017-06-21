@@ -2,8 +2,6 @@
 
 date: 2017-05-28
 title: Como eu aprendi a parar de me preocupar e amar a invasão islâmica
-summary: |
-  Basta ter novo atentado terrorista para que amigos vociferam contra a islamização da Europa. É um erro que também já cometi e do qual fui curado pela leitura de Submissão, do Michel Houellebecq, livro ao qual dei o subtítulo mental de “Or: How I Learned to Stop Worrying and Love the Islamic Invasion”. Em outras palavras, não sei o que fazer a respeito do problema da Europa, mas sei que o islã não é o problema. [...]
 
 ---
 

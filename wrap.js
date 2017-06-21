@@ -43,6 +43,8 @@ module.exports = function wrapperFactory (meta, content) {
         title = meta.title
         child = h(content, props)
         break
+      default:
+        return null
     }
 
     return h('article', [

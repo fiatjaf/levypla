@@ -6,7 +6,7 @@ module.exports = function BlogIndex (props) {
   let blogposts = Object.keys(pages)
     .filter(pathname => pathname.slice(0, props.meta.pathname.length) === props.meta.pathname)
     .filter(pathname => pathname !== props.meta.pathname)
-    .filter(pathname => pages[pathname].title)
+    .filter(pathname => pages[pathname].title && pages[pathname].date)
 
   return (
     h('ul.posts', blogposts

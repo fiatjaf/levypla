@@ -23,14 +23,16 @@ nav.nav {
   }
 
   a {
-    text-decoration: none;
     color: #333;
     &:hover { color: #E89B22 }
   }
 }
 
-a:hover {
+a {
+  text-decoration: none;
   color: #E89B22;
+
+  &:hover { color: #d56d56; }
 }
 
 .section {
@@ -39,4 +41,26 @@ a:hover {
 
 form label {
   font-family: 'Lato', sans-serif;
+}
+
+article {
+  max-width: 800px;
+}
+
+.post {
+  text-align: justify;
+}
+
+ul.posts {
+  list-style: none;
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  .summary {
+    text-align: justify;
+    padding: 0 0 0 25px;
+    font-size: 0.9em;
+  }
 }

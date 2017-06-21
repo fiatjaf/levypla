@@ -1,6 +1,7 @@
 {
   "name": "levypla",
   "dependencies": {
+    "data-bonita": "^0.1.0",
     "markdown-it": "^8.3.1",
     "react-hyperscript": "^3.0.0"
   },

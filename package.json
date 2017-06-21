@@ -1,0 +1,10 @@
+{
+  "name": "levypla",
+  "dependencies": {
+    "markdown-it": "^8.3.1",
+    "react-hyperscript": "^3.0.0"
+  },
+  "devDependencies": {
+    "react-site": "^0.3.0"
+  }
+}

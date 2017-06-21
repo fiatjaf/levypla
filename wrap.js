@@ -7,49 +7,52 @@ module.exports = function wrapperFactory (meta, content) {
   var ext = meta.filename.split('.').slice(-1)[0]
 
   return function Wrapper (props) {
-    var child
-    var title
-
     switch (ext) {
       case 'txt':
-        title = meta.title || meta.filename.split('/').slice(-1)[0].split('.')[0]
-        child = h('pre', [
-          h('code', {
-            dangerouslySetInnerHTML: {__html: content}
-          })
+        return h('article', [
+          h('h1', meta.title),
+          h('pre', [
+            h('code', {
+              dangerouslySetInnerHTML: {__html: content}
+            })
+          ]),
+          h('p', [
+            meta.pathname.slice(0, 8) === '/blogue/'
+              ? h('b', date.abs(new Date(Date.parse(meta.date))))
+              : null
+          ])
         ])
-        break
       case 'md':
         var md = new MarkdownIt()
         var body = matter(content).content
-        title = meta.title || meta.filename.split('/').slice(-1)[0].split('.')[0]
 
         return h('article', [
-          h('h1', title),
+          h('h1', meta.title),
           h('.post', {
             dangerouslySetInnerHTML: {__html: md.render(body)}
           }),
           h('p', [
-            meta.date
+            meta.pathname.slice(0, 8) === '/blogue/'
               ? h('b', date.abs(new Date(Date.parse(meta.date))))
               : null
           ])
         ])
       case 'html':
-        return h('article', {
-          dangerouslySetInnerHTML: {__html: content}
-        })
+        return h('article', [
+          h('.post', {
+            dangerouslySetInnerHTML: {__html: content}
+          }),
+          h('p', [
+            meta.pathname.slice(0, 8) === '/blogue/'
+              ? h('b', date.abs(new Date(Date.parse(meta.date))))
+              : null
+          ])
+        ])
       case 'js':
-        title = meta.title
-        child = h(content, props)
-        break
-      default:
-        return null
+        return h('article', [
+          h('h1', meta.title),
+          h(content, props)
+        ])
     }
-
-    return h('article', [
-      h('h1', title),
-      child
-    ])
   }
 }

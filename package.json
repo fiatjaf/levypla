@@ -5,6 +5,9 @@
     "react-hyperscript": "^3.0.0"
   },
   "devDependencies": {
-    "react-site": "^0.3.0"
+    "react-site": "^0.3.1"
+  },
+  "scripts": {
+    "build": "react-site build"
   }
 }

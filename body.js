@@ -1,24 +1,26 @@
 const h = require('react-hyperscript')
 
 module.exports = function Body (props) {
-  return h('div', [
-    h('header', [
-      h('h1', [
-        h('a', {href: '/'}, 'levypla')
+  return h('div#root', [
+    h('nav.nav', [
+      h('.nav-left', [
+        h('a.nav-item', {href: '/'}, 'Eduardo Levy')
+      ]),
+      h('.nav-center', [
+        h('a.nav-item', {href: '/sobre-mim/'}, 'Sobre mim'),
+        h('a.nav-item', {href: '/cursos/'}, 'Cursos'),
+        h('a.nav-item', {href: '/servicos-linguisticos/'}, 'Serviços lingüísticos'),
+        h('a.nav-item', {href: '/livros-traduzidos/'}, 'Livros traduzidos'),
+        h('a.nav-item', {href: '/blogue/'}, 'Blogue'),
+        h('a.nav-item', {href: '/contato/'}, 'Contato')
       ])
     ]),
-    h('nav', [
-      h('ul', [
-        h('li', [h('a', {href: '/sobre-mim/'}, 'Sobre mim')]),
-        h('li', [h('a', {href: '/cursos/'}, 'Cursos')]),
-        h('li', [h('a', {href: '/servicos-linguisticos/'}, 'Serviços lingüísticos')]),
-        h('li', [h('a', {href: '/livros-traduzidos/'}, 'Livros traduzidos')]),
-        h('li', [h('a', {href: '/blogue/'}, 'Blogue')]),
-        h('li', [h('a', {href: '/contato/'}, 'Contato')])
+    h('main.section', [
+      h('.columns', [
+        h('.column.is-10.is-offset-1', props.children)
       ])
     ]),
-    h('main', props.children),
-    h('footer', [
+    h('footer.footer', [
       h('p', '~')
     ]),
     h('script', {src: '/bundle.js'})

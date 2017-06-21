@@ -5,9 +5,11 @@
     "react-hyperscript": "^3.0.0"
   },
   "devDependencies": {
-    "react-site": "^0.3.1"
+    "bulma": "^0.4.2",
+    "node-sass": "^4.5.3",
+    "react-site": "^0.3.3"
   },
   "scripts": {
-    "build": "react-site build"
+    "build": "node-sass main.scss > style.css && react-site build"
   }
 }

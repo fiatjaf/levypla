@@ -3,6 +3,10 @@ const date = require('data-bonita')
 const MarkdownIt = require('markdown-it')
 const matter = require('gray-matter')
 
+function getDate (meta) {
+  return meta.created || meta.modified || meta.gitCreated || meta.gitModified || meta.date
+}
+
 module.exports = function wrapperFactory (meta, content) {
   var ext = meta.filename.split('.').slice(-1)[0]
 
@@ -18,7 +22,7 @@ module.exports = function wrapperFactory (meta, content) {
           ]),
           h('p', [
             meta.pathname.slice(0, 8) === '/blogue/'
-              ? h('b', date.abs(new Date(Date.parse(meta.date))))
+              ? h('b', date.abs(new Date(getDate(meta))))
               : null
           ])
         ])
@@ -33,7 +37,7 @@ module.exports = function wrapperFactory (meta, content) {
           }),
           h('p', [
             meta.pathname.slice(0, 8) === '/blogue/'
-              ? h('b', date.abs(new Date(Date.parse(meta.date))))
+              ? h('b', date.abs(new Date(getDate(meta))))
               : null
           ])
         ])
@@ -44,7 +48,7 @@ module.exports = function wrapperFactory (meta, content) {
           }),
           h('p', [
             meta.pathname.slice(0, 8) === '/blogue/'
-              ? h('b', date.abs(new Date(Date.parse(meta.date))))
+              ? h('b', date.abs(new Date(getDate(meta))))
               : null
           ])
         ])

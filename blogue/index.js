@@ -1,17 +1,21 @@
 const h = require('react-hyperscript')
 const date = require('data-bonita')
 
+function getDate (meta) {
+  return meta.created || meta.modified || meta.gitCreated || meta.gitModified || meta.date
+}
+
 module.exports = function BlogIndex (props) {
   let pages = props.pages
   let blogposts = Object.keys(pages)
     .filter(pathname => pathname.slice(0, props.meta.pathname.length) === props.meta.pathname)
     .filter(pathname => pathname !== props.meta.pathname)
-    .filter(pathname => pages[pathname].title && pages[pathname].date)
+    .filter(pathname => pages[pathname].title && getDate(pages[pathname]))
 
   return (
     h('ul.posts', blogposts
       .map(pathname => pages[pathname])
-      .sort((a, b) => a.date < b.date ? 1 : -1)
+      .sort((a, b) => getDate(a) < getDate(b) ? 1 : -1)
       .map(page =>
         h('li', [
           h('h2', [
@@ -23,7 +27,9 @@ module.exports = function BlogIndex (props) {
             h('a', {href: page.pathname}, '(...)')
           ]) : null,
           h('p', [
-            h('a', {href: page.pathname}, date.abs(new Date(Date.parse(page.date))))
+            h('a', {href: page.pathname},
+              date.abs(new Date(getDate(page)))
+            )
           ])
         ])
       )

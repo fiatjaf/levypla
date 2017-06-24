@@ -1,6 +1,5 @@
 ---
 
-date: 2015-02-18
 title: O filho do rico e o filho do pobre
 
 ---

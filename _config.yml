@@ -1,0 +1,33 @@
+prose:
+  ignore:
+    - .nojekyll
+    - _config.yml
+    - index.js
+    - CNAME
+    - .gitignore
+    - package.json
+    - body.js
+    - helmet.js
+    - wrap.js
+    - convert-docx.fish
+    - xidel
+    - realpath
+    - blogue/index.js
+    - main.scss
+  media: media
+  metadata:
+    blogue:
+      - name: title
+        field:
+          element: text
+          label: title
+      - name: date
+        field:
+          element: text
+          label: data
+          help: Data em que este poste aparecerá publicado. Deixe em branco para uma data automática.
+      - name: summary
+        field:
+          element: textarea
+          label: resumo
+          help: Resumo, frase chamativa, ou primeiras frases do texto, para aparecer na lista de postes em /blogue. Deixe em branco para um valor automático.

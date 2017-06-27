@@ -21,13 +21,13 @@ prose:
         field:
           element: text
           label: title
-      - name: date
+      - name: datetime
         field:
-          element: text
-          label: data
-          help: Data em que este poste aparecerá publicado. Deixe em branco para uma data automática.
+          element: textarea
+          label: datetime
+          help: Data em que este poste terá na lista de postes e na sua própria página. Deixe em branco para uma data automática.
       - name: summary
         field:
           element: textarea
-          label: resumo
-          help: Resumo, frase chamativa, ou primeiras frases do texto, para aparecer na lista de postes em /blogue. Deixe em branco para um valor automático.
+          label: summary
+          help: Isto aqui vai aparecer na lista de postes em /blogue. Deixe em branco para um valor automático.

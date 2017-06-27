@@ -2,7 +2,8 @@ const h = require('react-hyperscript')
 const date = require('data-bonita')
 
 function getDate (meta) {
-  return meta.created || meta.modified || meta.gitCreated || meta.gitModified || meta.date
+  return meta.datetime || meta.created || meta.modified ||
+         meta.gitCreated || meta.gitModified || meta.fsCreated || meta.fsModified
 }
 
 module.exports = function BlogIndex (props) {

@@ -4,7 +4,8 @@ const MarkdownIt = require('markdown-it')
 const matter = require('gray-matter')
 
 function getDate (meta) {
-  return meta.created || meta.modified || meta.gitCreated || meta.gitModified || meta.date
+  return meta.datetime || meta.created || meta.modified ||
+         meta.gitCreated || meta.gitModified || meta.fsCreated || meta.fsModified
 }
 
 module.exports = function wrapperFactory (meta, content) {

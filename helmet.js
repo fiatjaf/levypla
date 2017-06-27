@@ -1,4 +1,4 @@
-const Helmet = require('react-helmet')
+const Helmet = require('react-helmet').default
 const h = require('react-hyperscript')
 
 const sitename = 'Eduardo Levy'

@@ -8,7 +8,7 @@
   "devDependencies": {
     "bulma": "^0.4.2",
     "node-sass": "^4.5.3",
-    "react-site": "^0.6.0"
+    "react-site": "0.7.0"
   },
   "scripts": {
     "build": "node-sass main.scss > style.css && react-site build"

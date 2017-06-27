@@ -1,7 +1,7 @@
 ---
 
 date: 2017-05-28
-title: Como eu aprendi a parar de me preocupar e amar a invasão islâmica
+title: Como eu aprendi a parar de me preocupar e passei a amar a invasão islâmica
 
 ---
 

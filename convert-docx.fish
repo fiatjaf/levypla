@@ -23,7 +23,7 @@ for docx in (find . -name "*.docx")
     set modified (./xidel /tmp/docx/docProps/core.xml --extract='<modified>{.}</modified>' 2>/dev/null)
     set created (./xidel /tmp/docx/docProps/core.xml --extract='<created>{.}</created>' 2>/dev/null)
     set summary (./xidel /tmp/docx/docProps/core.xml --extract='<summary>{.}</summary>' 2>/dev/null)
-    set datetime (./xidel /tmp/docx/docProps/core.xml --extract='<datetime>{.}</datetime>' 2>/dev/null)
+    set date (./xidel /tmp/docx/docProps/core.xml --extract='<date>{.}</date>' 2>/dev/null)
     set revision (./xidel /tmp/docx/docProps/core.xml --extract='<revision>{.}</revision>' 2>/dev/null)
     # ~
     echo "---" > /tmp/frontmatter
@@ -39,8 +39,8 @@ for docx in (find . -name "*.docx")
     if [ -n "$summary" ]
       echo "summary: $summary" >> /tmp/frontmatter
     end
-    if [ -n "$datetime" ]
-      echo "datetime: $datetime" >> /tmp/frontmatter
+    if [ -n "$date" ]
+      echo "date: $date" >> /tmp/frontmatter
     end
     if [ -n "$revision" ]
       echo "revision: $revision" >> /tmp/frontmatter

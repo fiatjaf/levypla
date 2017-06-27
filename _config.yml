@@ -21,11 +21,12 @@ prose:
         field:
           element: text
           label: title
-      - name: datetime
+      - name: date
         field:
-          element: textarea
-          label: datetime
+          element: text
+          label: date
           help: Data em que este poste terá na lista de postes e na sua própria página. Deixe em branco para uma data automática.
+          placeholder: 26/02/1989
       - name: summary
         field:
           element: textarea

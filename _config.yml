@@ -1,6 +1,7 @@
 prose:
   ignore:
     - .nojekyll
+    - .travis.yml
     - _config.yml
     - index.js
     - CNAME
@@ -14,6 +15,7 @@ prose:
     - realpath
     - blogue/index.js
     - main.scss
+    - admin
   media: media
   metadata:
     blogue:

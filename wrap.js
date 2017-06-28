@@ -20,6 +20,7 @@ module.exports = function wrapperFactory (meta, content) {
       case 'txt':
         return h('article', [
           h('h1', meta.title),
+          meta.image ? h('img', {src: meta.image}) : null,
           h('pre', [
             h('code', {
               dangerouslySetInnerHTML: {__html: content}
@@ -37,6 +38,7 @@ module.exports = function wrapperFactory (meta, content) {
 
         return h('article', [
           h('h1', meta.title),
+          meta.image ? h('img', {src: meta.image}) : null,
           h('.post', {
             dangerouslySetInnerHTML: {__html: md.render(body)}
           }),

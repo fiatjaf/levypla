@@ -8,7 +8,7 @@
   "devDependencies": {
     "bulma": "^0.4.2",
     "node-sass": "^4.5.3",
-    "react-site": "0.7.1"
+    "react-site": "^0.7.2"
   },
   "scripts": {
     "build": "node-sass main.scss > style.css && react-site build"
@@ -20,6 +20,7 @@
     ],
     "static": [
       "CNAME",
+      "body.js",
       "admin/*"
     ]
   }

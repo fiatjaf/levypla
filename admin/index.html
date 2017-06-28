@@ -5,4 +5,36 @@
 <link rel="stylesheet" href="https://unpkg.com/netlify-cms@0.4.3/dist/cms.css">
 <body>
   <script src="https://unpkg.com/netlify-cms@0.4.3/dist/cms.js"></script>
+  <script src="../bundle.js"></script>
+  <script>
+window.module = {exports: null}
+  </script>
+  <script src="../body.js"></script>
+  <script>
+var Body = window.module.exports
+var React = require('react')
+var preview = createClass({
+  render () {
+    var d = this.props.entry.toJS()
+    var Component = require('wrap.js')({
+      filename: d.path,
+      pathname: d.path,
+      title: d.data.title,
+      image: d.data.image,
+      summary: d.data.summary,
+      date: d.data.date,
+    }, d.data.body)
+
+    return React.createElement(Body, {}, [
+      React.createElement(Component, {})
+    ])
+  }
+})
+CMS.registerPreviewStyle('../style.css')
+CMS.registerPreviewTemplate('blogue', preview)
+CMS.registerPreviewTemplate('livros-traduzidos', preview)
+CMS.registerPreviewTemplate('sobre-mim', preview)
+CMS.registerPreviewTemplate('servicos-linguisticos', preview)
+CMS.registerPreviewTemplate('cursos', preview)
+  </script>
 </body>

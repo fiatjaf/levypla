@@ -1,8 +1,9 @@
 ---
 title: Como eu aprendi a parar de me preocupar e passei a amar a invasão islâmica
 date: 28/9/2016
+published: false
 ---
-Que beleza, funciona mesmo.
+Mas que dificuldade pra poder editar um texto, parece que estamos tentando ir à Lua.
 
 Basta ter novo atentado terrorista para que amigos vociferam contra a islamização da Europa. É um erro que também já cometi e do qual fui curado pela leitura de Submissão, do Michel Houellebecq, livro ao qual dei o subtítulo mental de _“Or: How I Learned to Stop Worrying and Love the Islamic Invasion”_. Em outras palavras, não sei o que fazer a respeito do problema da Europa, mas sei que o islã não é o problema.
 
@@ -21,4 +22,3 @@ O primeiro lampejo, ainda mais ou menos inconsciente, que François tem de que �
 O segundo insight ocorre no momento em que François contempla as duas esposas de Redinger, o reitor da Universidade Islâmica de Sorbonne, um guenoniano muçulmano há mais de uma década que acaba por convertê-lo: uma fresca menina de 15 anos reservada ao sexo e uma simpática senhora de 40 que se dedica a cozinhar quitutes. Além disso, os problemas dos homens tímidos, incapazes de cortejar o sexo oposto, acabarão: casamenteiras islâmicas lhes arranjarão casamentos com as adolescentes mais durinhas do pedaço. Que mais pode um homem querer? E que mais podem querer as mulheres além de um marido que as ame, as proteja e as sustente, mesmo depois de as carnes caírem? Qual delas preferiria arrancar, seja a murros ou a boquetes, uma posição empregatícia medíocre depois de décadas de faina, às custas ou de ver o marido buscar em outras a energia sexual que ela dedicou ao trabalho ou de tornar-se uma solteirona despencada?
 
 De fato, o reitor Rediger, muçulmano exemplar, não é muito diferente de François. Os argumentos teológicos que dá a favor do islã são os mais rasos concebíveis; resta claro que os fatos que o convenceram a tornar-se muçulmano foram de ordem… gastronômica e sexual. Depois de militar no tradicionalismo católico por alguns anos, ele se convence de que o cristianismo não tem salvação quando o bar do Hotel Metrópole, em Bruxelas, fecha as portas. Que espécie de civilização permite um absurdo desses, afinal de contas? Mas tem mais: Para o reitor, o livro que melhor capta a essência do islã é o romance sadomasoquista _Histoire d’O_, uma espécie de _Cinquenta tons de cinza_ menos tosco, que segundo ele mostra como deve ser a relação da mulher com o homem e do homem com Deus. Por fim, os argumentos de Rediger a favor da existência de Deus são retirados diretamente da ciência astronômica, e a defesa da poligamia se faz com base na seleção natural darwiniana, de modo que o detalhe de ser um cientista ateu não precise impedir ninguém de desfrutar das delícias eróticas e gastronômicas do islã. Quem poderia resistir?
-

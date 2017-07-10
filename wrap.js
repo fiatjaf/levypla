@@ -64,6 +64,8 @@ module.exports = function wrapperFactory (meta, content) {
           h('h1', meta.title),
           h(content, props)
         ])
+      default:
+        return h('div', 'invalid file')
     }
   }
 }

@@ -1,7 +1,8 @@
 ---
 
-title: Motoca estúpida
+title: Motoca estúpida,
+date: 2018-09-12
 
 ---
 
-\~ write something here.
+something here.

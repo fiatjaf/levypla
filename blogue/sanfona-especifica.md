@@ -6,10 +6,10 @@
 
 uma bela sanfona e muito específica.
 
-![](https://cantillon.alhur.es:2764/media/gnj.jpg "media/gnj.jpg")
+![/media/royal-straight-flush.png "media/royal-straight-flush.png")
 
 uma foto.
 
-![](https://cantillon.alhur.es:2764/media/royal-straight-flush.png "media/royal-straight-flush.png")
+![/media/gnj.jpg "media/gnj.jpg")
 
 outra foto.

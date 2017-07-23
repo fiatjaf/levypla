@@ -6,10 +6,10 @@
 
 uma bela sanfona e muito específica.
 
-![/media/royal-straight-flush.png "media/royal-straight-flush.png")
+![](/media/gnj.jpg "media/gnj.jpg")
 
 uma foto.
 
-![/media/gnj.jpg "media/gnj.jpg")
+![](/media/royal-straight-flush.png "media/royal-straight-flush.png")
 
 outra foto.

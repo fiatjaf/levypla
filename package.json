@@ -2,6 +2,8 @@
   "name": "levypla",
   "dependencies": {
     "data-bonita": "^0.1.0",
+    "extract-summary": "^1.0.0",
+    "gray-matter": "^3.0.2",
     "markdown-it": "^8.3.1",
     "react-hyperscript": "^3.0.0"
   },
@@ -12,16 +14,5 @@
   },
   "scripts": {
     "build": "node-sass main.scss > style.css && react-site build"
-  },
-  "react-site": {
-    "build-ignore": [
-      "admin/*",
-      "media/*"
-    ],
-    "static": [
-      "CNAME",
-      "body.js",
-      "admin/*"
-    ]
   }
 }

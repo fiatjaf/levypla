@@ -17,7 +17,7 @@ module.exports = function makeHelmet (props) {
       {charset: 'utf-8'},
       {httpEquiv: 'x-ua-compatible', content: 'ie: edge'},
       {name: 'description', content: description},
-      {name: 'viewport', content: 'width: device-width, initial-scale: 1.0'}
+      {name: 'viewport', content: 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes'}
     ],
     title: title,
     link: [

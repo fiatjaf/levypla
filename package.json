@@ -10,9 +10,11 @@
     "bulma": "^0.4.2",
     "extract-summary": "^1.0.0",
     "node-sass": "^4.5.3",
-    "react-site": "1.0.2"
+    "react-site": "1.0.4"
   },
   "scripts": {
-    "build": "node-sass main.scss > style.css && react-site generate.js --helmet=helmet.js --body=body.js"
+    "css": "node-sass main.scss > style.css",
+    "site": "react-site generate.js --helmet=helmet.js --body=body.js",
+    "build": "npm run css && npm run site"
   }
 }

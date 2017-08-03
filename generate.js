@@ -1,7 +1,7 @@
 const matter = require('gray-matter')
 const extractSummary = require('extract-summary')
 
-const {init, end, listFiles, generatePage, copyStatic} = require('../react-site/')
+const {init, end, listFiles, generatePage, copyStatic} = require('react-site')
 
 init()
 
@@ -45,6 +45,10 @@ for (let i = 0; i < filestobuild.length; i++) {
           })
       })
       continue
+    }
+
+    if (data.pathname === '/livros-traduzidos/') {
+
     }
 
     meta = Object.assign(meta, content.meta)

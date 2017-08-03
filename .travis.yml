@@ -7,15 +7,6 @@ before_install:
   - sudo add-apt-repository ppa:fish-shell/release-2 -y
   - sudo apt-get update
   - sudo apt-get install fish -y
-  - sudo apt-get install jq -y
-  - sudo cp ./realpath /usr/local/bin/realpath
-  #- wget http://ftp.gnu.org/gnu/coreutils/coreutils-8.23.tar.xz
-  #- tar -xvf coreutils-8.23.tar.xz
-  #- cd coreutils-8.23/
-  #- ./configure
-  #- make
-  #- sudo make install
-  - realpath --help
   - wget https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb
   - sudo dpkg -i pandoc-1.19.2.1-1-amd64.deb
 install:

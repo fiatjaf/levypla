@@ -32,7 +32,7 @@ window.load(
 
 // react-site exports a lot of pre-required modules, including the `require()`
 // functions, so this will work.
-window.load('https://levypla.alhur.es/bundle.js')
+window.load('https://levypla.surge.sh/bundle.js')
   .then(() => {
     window.module = {exports: null}
     return window.load('https://rawgit.com/fiatjaf/levypla/master/body.js')
@@ -41,7 +41,7 @@ window.load('https://levypla.alhur.es/bundle.js')
     window.Body = window.module.exports
   })
 
-window.coisas.canPreview = (_, ext) => ext === 'html' || ext === 'md'
+window.coisas.canPreview = (_, ext) => ext === '.html' || ext === '.md'
 window.coisas.generatePreview = (el, {
   path,
   name,
@@ -56,16 +56,44 @@ window.coisas.generatePreview = (el, {
   el.style.padding = '20px'
   let sh = el.attachShadow({mode: 'open'})
 
-  let h = require('react-hyperscript')
+  let style = document.createElement('style')
+  style.innerHTML = '@import url("https://levypla.surge.sh/style.css")'
+  sh.appendChild(style)
+
+  let root = document.createElement('div')
+  sh.appendChild(root)
+
+  let pathname = path.split('/').slice(-1)[0].split('.')[0] === 'index'
+    ? '/' + path.split('/').slice(0, -1).join('/') + '/'
+    : '/' + path.split('.').slice(0, -1).join('/') + '/'
+
+  let amd = require('micro-amd')()
+  let React = require('react')
   let render = require('react-dom').render
 
-  var Component = require('wrap.js')({
-    filename: name,
-    pathname: path,
-    title: metadata.title,
-    summary: metadata.summary,
-    date: metadata.date
-  }, content)
+  window.define = amd.define.bind(amd)
+  window.define.amd = true
+  window.reactSite.rootElement = root
 
-  render(h(Component), sh)
+  let surl = window.reactSite.utils.standaloneURL(pathname)
+  amd.require([surl], function (page) {
+    var props = page.props
+
+    props.location = {
+      pathname: pathname,
+      search: ''
+    }
+    props.meta.ext = ext
+    props.meta.pathname = pathname
+    props.meta.filename = name
+    props.meta.title = metadata.title
+    props.meta.summary = metadata.summary
+    props.meta.date = metadata.date
+    props.content = content
+
+    render(React.createElement(window.reactSite.Main, {
+      component: page.component,
+      props: props
+    }), window.reactSite.rootElement)
+  })
 }

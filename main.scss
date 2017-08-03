@@ -8,8 +8,11 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Spectral');
 
 body {
-  font-family: 'Spectral', serif;
   font-size: 1.4em;
+}
+
+body, #levypla {
+  font-family: 'Spectral', serif;
   color: #333;
   background-color: #efe9e5;
   margin: 0;

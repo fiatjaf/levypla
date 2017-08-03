@@ -10,7 +10,7 @@
     "bulma": "^0.4.2",
     "extract-summary": "^1.0.0",
     "node-sass": "^4.5.3",
-    "react-site": "1.0.6"
+    "react-site": "1.0.7"
   },
   "scripts": {
     "css": "node-sass main.scss > style.css",

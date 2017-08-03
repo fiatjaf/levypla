@@ -15,7 +15,7 @@ before_script:
   - fish ./convert-docx.fish
 script:
   - npm run css
-  - react-site generate.js --helmet=helmet.js --body=body.js --target-dir=_debug --base-url=http://direct.levypla.alhur.es
+  - react-site generate.js --helmet=helmet.js --body=body.js --target-dir=_debug --base-url=https://levypla.surge.sh
   - react-site generate.js --helmet=helmet.js --body=body.js --target-dir=_prod --production
   - echo levypla.alhur.es > _prod/CNAME
 deploy:
@@ -28,5 +28,5 @@ deploy:
     target_branch: gh-pages
   - provider: surge
     skip_cleanup: true
-    domain: direct.levypla.alhur.es
+    domain: levypla.surge.sh
     project: ./_debug/

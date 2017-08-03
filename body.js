@@ -1,7 +1,7 @@
 const h = require('react-hyperscript')
 
 module.exports = function Body (props) {
-  return h('div#root', [
+  return h('main', [
     h('nav.nav', [
       h('.nav-left', [
         h('a.nav-item', {href: '/'}, 'Eduardo Levy')

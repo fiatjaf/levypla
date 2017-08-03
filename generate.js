@@ -10,7 +10,8 @@ let filestobuild = listFiles({
     'admin/*',
     'media/*',
     'wrap-*.js',
-    'utils.js'
+    'utils.js',
+    '_*/**'
   ]
 })
 
@@ -58,13 +59,12 @@ for (let i = 0; i < filestobuild.length; i++) {
 }
 
 copyStatic([
-  'CNAME',
   '*.css',
   'body.js',
   'media/*',
   'admin/*',
   'coisas.js',
-  '_*'
+  '_config.yml'
 ])
 
 end()

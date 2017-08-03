@@ -14,12 +14,19 @@ install:
 before_script:
   - fish ./convert-docx.fish
 script:
-  - npm run build
+  - npm run css
+  - react-site generate.js --helmet=helmet.js --body=body.js --target-dir=_debug --base-url=http://direct.levypla.alhur.es
+  - react-site generate.js --helmet=helmet.js --body=body.js --target-dir=_prod --production
+  - echo levypla.alhur.es > _prod/CNAME
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-  on:
-    branch: master
-  local_dir: _site/
-  target_branch: gh-pages
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    on:
+      branch: master
+    local_dir: _prod/
+    target_branch: gh-pages
+  - provider: surge
+    skip_cleanup: true
+    domain: pre.levypla.alhur.es
+    project: ./_debug/

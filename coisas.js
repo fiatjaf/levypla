@@ -7,8 +7,6 @@ window.coisas.filterTreeFiles = f => {
     case 'fish':
     case 'json':
     case 'yml':
-    case 'CNAME':
-    case 'realpath':
       return false
     default:
       return true
@@ -34,7 +32,7 @@ window.load(
 
 // react-site exports a lot of pre-required modules, including the `require()`
 // functions, so this will work.
-window.load('https://rawgit.com/fiatjaf/levypla/gh-pages/bundle.js')
+window.load('https://levypla.alhur.es/bundle.js')
   .then(() => {
     window.module = {exports: null}
     return window.load('https://rawgit.com/fiatjaf/levypla/master/body.js')

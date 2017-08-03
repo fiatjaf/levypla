@@ -11,7 +11,8 @@ let filestobuild = listFiles({
     'media/*',
     'wrap-*.js',
     'utils.js',
-    '_*/**'
+    '_*/**',
+    'livros-traduzidos/_lista/*'
   ]
 })
 
@@ -28,28 +29,34 @@ for (let i = 0; i < filestobuild.length; i++) {
     content = text
   } else if (data.ext === '.js') {
     if (data.pathname === '/blogue/') {
-      generatePage(data.pathname, data.filepath, {
-        meta,
-        content,
-        pages: filestobuild
-          .filter(f => f.pathname.match(/\/blogue\/.+/))
-          .map(f => {
-            let {data: frontmatter, content: text} = matter(f.content)
-            return Object.assign({
-              pathname: f.pathname,
-              gitCreated: f.gitCreated,
-              gitModified: f.gitModified,
-              fsCreated: f.fsCreated,
-              fsModified: f.fsModified,
-              summary: extractSummary(text)
-            }, frontmatter)
-          })
-      })
+      let pages = filestobuild
+        .filter(f => f.pathname.match(/\/blogue\/.+/))
+        .map(f => {
+          let {data: frontmatter, content: text} = matter(f.content)
+          return Object.assign({
+            pathname: f.pathname,
+            gitCreated: f.gitCreated,
+            gitModified: f.gitModified,
+            fsCreated: f.fsCreated,
+            fsModified: f.fsModified,
+            summary: extractSummary(text)
+          }, frontmatter)
+        })
+
+      generatePage(data.pathname, data.filepath, {meta, content, pages})
       continue
     }
 
     if (data.pathname === '/livros-traduzidos/') {
+      let pages = listFiles({pattern: 'livros-traduzidos/_lista/*'})
+        .map(f => {
+          console.log(f)
+          let {data: frontmatter, content: text} = matter(f.content)
+          return Object.assign(frontmatter, {text})
+        })
 
+      generatePage(data.pathname, data.filepath, {meta, content, pages})
+      continue
     }
 
     meta = Object.assign(meta, content.meta)

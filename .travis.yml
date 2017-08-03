@@ -28,5 +28,5 @@ deploy:
     target_branch: gh-pages
   - provider: surge
     skip_cleanup: true
-    domain: pre.levypla.alhur.es
+    domain: direct.levypla.alhur.es
     project: ./_debug/

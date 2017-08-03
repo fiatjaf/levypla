@@ -1,7 +1,7 @@
 const matter = require('gray-matter')
 const extractSummary = require('extract-summary')
 
-const {init, listFiles, generatePage, copyStatic} = require('../react-site/')
+const {init, end, listFiles, generatePage, copyStatic} = require('../react-site/')
 
 init()
 
@@ -27,7 +27,7 @@ for (let i = 0; i < filestobuild.length; i++) {
     content = text
   } else if (data.ext === '.js') {
     if (data.pathname === '/blogue/') {
-      generatePage(data.targetpath, data.filepath, {
+      generatePage(data.pathname, data.filepath, {
         meta,
         content,
         pages: filestobuild
@@ -50,7 +50,7 @@ for (let i = 0; i < filestobuild.length; i++) {
     meta = Object.assign(meta, content.meta)
   }
 
-  generatePage(data.targetpath, `wrap-${data.ext.slice(1)}.js`, {meta, content})
+  generatePage(data.pathname, `wrap-${data.ext.slice(1)}.js`, {meta, content})
 }
 
 copyStatic([
@@ -62,3 +62,5 @@ copyStatic([
   'coisas.js',
   '_*'
 ])
+
+end()

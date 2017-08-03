@@ -2,13 +2,13 @@
   "name": "levypla",
   "dependencies": {
     "data-bonita": "^0.1.0",
-    "extract-summary": "^1.0.0",
     "gray-matter": "^3.0.2",
     "markdown-it": "^8.3.1",
     "react-hyperscript": "^3.0.0"
   },
   "devDependencies": {
     "bulma": "^0.4.2",
+    "extract-summary": "^1.0.0",
     "node-sass": "^4.5.3",
     "react-site": "^0.7.2"
   },

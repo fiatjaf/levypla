@@ -2,14 +2,14 @@ const h = require('react-hyperscript')
 
 module.exports = function Livros ({pages}) {
   return (
-    h('table', [
+    h('table.livros-traduzidos', [
       h('tbody', pages.map(p =>
         h('tr', [
-          h('th', [
-            h('h3.title.is-3', p.nome),
+          h('th.face', [
+            h('h2', p.nome),
             h('img', {src: p.capa})
           ]),
-          h('td', [
+          h('td.desc', [
             h('dl', Object.keys(p)
               .filter(key => key !== 'nome' && key !== 'capa' && key !== 'text')
               .map(key =>

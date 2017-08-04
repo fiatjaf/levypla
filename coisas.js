@@ -41,6 +41,12 @@ window.load('https://levypla.surge.sh/bundle.js')
     window.Body = window.module.exports
   })
 
+// a hack to load fonts since @font-face doesn't work on shadow dom
+let fontlink = document.createElement('link')
+fontlink.href = 'https://fonts.googleapis.com/css?family=Lato|Spectral'
+fontlink.rel = 'stylesheet'
+document.head.appendChild(fontlink)
+
 window.coisas.canPreview = (_, ext) => ext === '.html' || ext === '.md'
 window.coisas.generatePreview = (el, {
   path,

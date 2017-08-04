@@ -1,18 +1,38 @@
 const h = require('react-hyperscript')
 
 module.exports = function Body (props) {
-  return h('#levypla', [
-    h('nav.nav', [
-      h('.nav-left', [
-        h('a.nav-item', {href: '/'}, 'Eduardo Levy')
+  return h('#levypla', {
+    ref: el => {
+      if (el) {
+        let burger = el.querySelector('.navbar-burger')
+        let menu = el.querySelector('.navbar-menu')
+        burger.onclick = function () {
+          burger.classList.toggle('is-active')
+          menu.classList.toggle('is-active')
+        }
+      }
+    }
+  }, [
+    h('nav.navbar', [
+      h('.navbar-brand', [
+        h('a.navbar-item', {href: '/'}, [
+          h('img', {src: '/icon-semfundo.png', alt: 'Eduardo Levy'})
+        ]),
+        h('.navbar-burger', [
+          h('span'),
+          h('span'),
+          h('span')
+        ])
       ]),
-      h('.nav-center', [
-        h('a.nav-item', {href: '/sobre-mim/'}, 'Sobre mim'),
-        h('a.nav-item', {href: '/cursos/'}, 'Cursos'),
-        h('a.nav-item', {href: '/servicos-linguisticos/'}, 'Serviços lingüísticos'),
-        h('a.nav-item', {href: '/livros-traduzidos/'}, 'Livros traduzidos'),
-        h('a.nav-item', {href: '/blogue/'}, 'Blogue'),
-        h('a.nav-item', {href: '/contato/'}, 'Contato')
+      h('.navbar-menu', [
+        h('.navbar-end', [
+          h('a.navbar-item', {href: '/sobre-mim/'}, 'Sobre mim'),
+          h('a.navbar-item', {href: '/cursos/'}, 'Cursos'),
+          h('a.navbar-item', {href: '/servicos-linguisticos/'}, 'Serviços lingüísticos'),
+          h('a.navbar-item', {href: '/livros-traduzidos/'}, 'Livros traduzidos'),
+          h('a.navbar-item', {href: '/blogue/'}, 'Blogue'),
+          h('a.navbar-item', {href: '/contato/'}, 'Contato')
+        ])
       ])
     ]),
     h('main.section', [

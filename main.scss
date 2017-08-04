@@ -1,11 +1,18 @@
+$desktop: 928px;
+
 @import "node_modules/bulma/sass/utilities/_all";
 @import "node_modules/bulma/sass/grid/columns";
-@import "node_modules/bulma/sass/components/nav";
+@import "node_modules/bulma/sass/components/navbar";
 @import "node_modules/bulma/sass/elements/form";
 @import "node_modules/bulma/sass/elements/button";
 @import "node_modules/bulma/sass/layout/_all";
 
 @import url('https://fonts.googleapis.com/css?family=Lato|Spectral');
+
+$branco: #efe9e5;
+$cinza: #606062;
+$amarelo: #E89B22;
+$laranja: #d56d56;
 
 body {
   font-size: 1.4em;
@@ -13,12 +20,18 @@ body {
 
 body, #levypla {
   font-family: 'Spectral', serif;
-  color: #333;
-  background-color: #efe9e5;
+  color: $cinza;
+  background-color: $branco;
   margin: 0;
 }
 
-nav.nav {
+nav.navbar,
+footer.footer {
+  background-color: $cinza;
+  color: $branco;
+}
+
+nav.navbar {
   font-family: 'Lato', sans-serif;
 
   .nav-center {
@@ -26,16 +39,31 @@ nav.nav {
   }
 
   a {
-    color: #333;
-    &:hover { color: #E89B22 }
+    color: $branco;
+    &:hover { color: $amarelo; }
+  }
+}
+
+div.navbar-burger {
+  span {
+    background-color: $white;
+  }
+}
+a.navbar-item {
+  font-size: 0.8em;
+  padding: 0.5rem 0.3rem;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: initial;
   }
 }
 
 a {
   text-decoration: none;
-  color: #E89B22;
+  color: $amarelo;
 
-  &:hover { color: #d56d56; }
+  &:hover { color: $laranja; }
 }
 
 .section {
@@ -72,8 +100,8 @@ ul.posts {
 }
 
 table.livros-traduzidos {
-  desc {
-    padding-left: 30px;
+  .desc {
+    padding-left: 48px;
     vertical-align: top;
   }
 

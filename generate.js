@@ -66,7 +66,7 @@ for (let i = 0; i < filestobuild.length; i++) {
 }
 
 copyStatic([
-  '*.css',
+  '**/*.*(css|jpeg|jpg|png|svg|txt)',
   'body.js',
   'media/*',
   'admin/*',

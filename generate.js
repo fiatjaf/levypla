@@ -35,11 +35,12 @@ for (let i = 0; i < filestobuild.length; i++) {
           let {data: frontmatter, content: text} = matter(f.content)
           return Object.assign({
             pathname: f.pathname,
+            title: f.basename.split('.')[0],
             gitCreated: f.gitCreated,
             gitModified: f.gitModified,
             fsCreated: f.fsCreated,
             fsModified: f.fsModified,
-            summary: extractSummary(text)
+            summary: extractSummary(text, f.ext)
           }, frontmatter)
         })
 
@@ -50,7 +51,6 @@ for (let i = 0; i < filestobuild.length; i++) {
     if (data.pathname === '/livros-traduzidos/') {
       let pages = listFiles({pattern: 'livros-traduzidos/_lista/*'})
         .map(f => {
-          console.log(f)
           let {data: frontmatter, content: text} = matter(f.content)
           return Object.assign(frontmatter, {text})
         })

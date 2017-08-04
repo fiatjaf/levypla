@@ -5,7 +5,7 @@ const {getDate} = require('../utils')
 
 module.exports = function BlogIndex ({pages}) {
   let blogposts = pages
-    .filter(p => p.title && getDate(p))
+    .filter(p => getDate(p))
 
   return (
     h('ul.posts', blogposts

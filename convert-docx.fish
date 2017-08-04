@@ -36,6 +36,9 @@ for docx in (find . -name "*.docx")
     if [ -n "$created" ]
       echo "created: $created" >> /tmp/frontmatter
     end
+    if [ -n "$creator" ]
+      echo "creator: $creator" >> /tmp/frontmatter
+    end
     if [ -n "$summary" ]
       echo "summary: $summary" >> /tmp/frontmatter
     end

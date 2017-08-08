@@ -30,6 +30,18 @@ window.load(
   }
 })
 
+// color customization
+document.body.style.setProperty('--main-background', '#EFE9E5')
+document.body.style.setProperty('--main-text', '#606062')
+document.body.style.setProperty('--tree-folder-text', '#606062')
+document.body.style.setProperty('--tree-file-text', '#606062')
+document.body.style.setProperty('--tree-file-hover-background', 'transparent')
+document.body.style.setProperty('--tree-file-hover-text', '#E89B22')
+document.body.style.setProperty('--tree-file-active-background', '#606062')
+document.body.style.setProperty('--tree-file-active-text', '#EFE9E5')
+document.body.style.setProperty('--save-button-background', '#E89B22')
+document.body.style.setProperty('--file-area', '#606062')
+
 // react-site exports a lot of pre-required modules, including the `require()`
 // functions, so this will work.
 window.load('https://levypla.surge.sh/bundle.js')

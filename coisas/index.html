@@ -1,0 +1,120 @@
+<!doctype html><html ><head><meta data-react-helmet="true" charset="utf-8"/><meta data-react-helmet="true" name="description" content="A pior forma de solidão é a companhia do Eduardo."/><meta data-react-helmet="true" name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes"/><title data-react-helmet="true">Eduardo Levy, traduções, tatuagens e dança aeróbica</title><link data-react-helmet="true" rel="stylesheet" href="/style.css"/></head><body><div id="react-site"><div id="levypla" data-reactroot="" data-reactid="1" data-react-checksum="-898143967"><nav class="navbar" data-reactid="2"><div class="navbar-brand" data-reactid="3"><a href="/" class="navbar-item" data-reactid="4"><img src="/icon-semfundo.png" alt="Eduardo Levy" data-reactid="5"/></a><div class="navbar-burger" data-reactid="6"><span data-reactid="7"></span><span data-reactid="8"></span><span data-reactid="9"></span></div></div><div class="navbar-menu" data-reactid="10"><div class="navbar-end" data-reactid="11"><a href="/sobre-mim/" class="navbar-item" data-reactid="12">Sobre mim</a><a href="/cursos/" class="navbar-item" data-reactid="13">Cursos</a><a href="/servicos-linguisticos/" class="navbar-item" data-reactid="14">Serviços lingüísticos</a><a href="/livros-traduzidos/" class="navbar-item" data-reactid="15">Livros traduzidos</a><a href="/blogue/" class="navbar-item" data-reactid="16">Blogue</a><a href="/contato/" class="navbar-item" data-reactid="17">Contato</a></div></div></nav><main class="section" data-reactid="18"><div class="columns" data-reactid="19"><div class="column is-10 is-offset-1" data-reactid="20"><!-- react-empty: 21 --><article data-reactid="22"><h1 data-reactid="23"></h1><window content="window.coisas.filterTreeFiles = f =&gt; {
+  if (f.path[0] === &#x27;.&#x27;) return false
+
+  switch (f.path.split(&#x27;.&#x27;).slice(-1)[0]) {
+    case &#x27;js&#x27;:
+    case &#x27;xidel&#x27;:
+    case &#x27;fish&#x27;:
+    case &#x27;json&#x27;:
+    case &#x27;yml&#x27;:
+      return false
+    default:
+      return true
+  }
+}
+
+window.load(
+  &#x27;https://cdn.rawgit.com/fiatjaf/haikunator-porreta/fb5db13f/dist/haikunator-porreta.min.js&#x27;
+, err =&gt; {
+  if (err) return
+  window.coisas.defaultNewFile = (dirPath) =&gt; {
+    let haiku = window.haikunate()
+    return Promise.resolve({
+      name: `${haiku}.md`,
+      content: &#x27;~ write something here.&#x27;,
+      metadata: {
+        title: haiku.split(&#x27;-&#x27;).map(w =&gt; w.replace(/\w/, ch =&gt; ch.toUpperCase())).join(&#x27; &#x27;),
+        date: (new Date()).toISOString().split(&#x27;T&#x27;)[0]
+      }
+    })
+  }
+})
+
+// color customization
+document.body.style.setProperty(&#x27;--main-background&#x27;, &#x27;#EFE9E5&#x27;)
+document.body.style.setProperty(&#x27;--main-text&#x27;, &#x27;#606062&#x27;)
+document.body.style.setProperty(&#x27;--tree-folder-text&#x27;, &#x27;#606062&#x27;)
+document.body.style.setProperty(&#x27;--tree-file-text&#x27;, &#x27;#606062&#x27;)
+document.body.style.setProperty(&#x27;--tree-file-hover-background&#x27;, &#x27;transparent&#x27;)
+document.body.style.setProperty(&#x27;--tree-file-hover-text&#x27;, &#x27;#E89B22&#x27;)
+document.body.style.setProperty(&#x27;--tree-file-active-background&#x27;, &#x27;#606062&#x27;)
+document.body.style.setProperty(&#x27;--tree-file-active-text&#x27;, &#x27;#EFE9E5&#x27;)
+document.body.style.setProperty(&#x27;--save-button-background&#x27;, &#x27;#E89B22&#x27;)
+document.body.style.setProperty(&#x27;--file-area&#x27;, &#x27;#606062&#x27;)
+
+// react-site exports a lot of pre-required modules, including the `require()`
+// functions, so this will work.
+window.load(&#x27;https://levypla.surge.sh/bundle.js&#x27;)
+  .then(() =&gt; {
+    window.module = {exports: null}
+    return window.load(&#x27;https://rawgit.com/fiatjaf/levypla/master/body.js&#x27;)
+  })
+  .then(() =&gt; {
+    window.Body = window.module.exports
+  })
+
+// a hack to load fonts since @font-face doesn&#x27;t work on shadow dom
+let fontlink = document.createElement(&#x27;link&#x27;)
+fontlink.href = &#x27;https://fonts.googleapis.com/css?family=Lato|Spectral&#x27;
+fontlink.rel = &#x27;stylesheet&#x27;
+document.head.appendChild(fontlink)
+
+window.coisas.canPreview = (_, ext) =&gt; ext === &#x27;.html&#x27; || ext === &#x27;.md&#x27;
+window.coisas.generatePreview = (el, {
+  path,
+  name,
+  ext,
+  mime,
+  content,
+  metadata,
+  slug,
+  tree,
+  edited
+}) =&gt; {
+  el.style.padding = &#x27;20px&#x27;
+  let sh = el.attachShadow({mode: &#x27;open&#x27;})
+
+  let style = document.createElement(&#x27;style&#x27;)
+  style.innerHTML = &#x27;@import url(&quot;https://levypla.surge.sh/style.css&quot;)&#x27;
+  sh.appendChild(style)
+
+  let root = document.createElement(&#x27;div&#x27;)
+  sh.appendChild(root)
+
+  let pathname = path.split(&#x27;/&#x27;).slice(-1)[0].split(&#x27;.&#x27;)[0] === &#x27;index&#x27;
+    ? &#x27;/&#x27; + path.split(&#x27;/&#x27;).slice(0, -1).join(&#x27;/&#x27;) + &#x27;/&#x27;
+    : &#x27;/&#x27; + path.split(&#x27;.&#x27;).slice(0, -1).join(&#x27;/&#x27;) + &#x27;/&#x27;
+
+  let amd = require(&#x27;micro-amd&#x27;)()
+  let React = require(&#x27;react&#x27;)
+  let render = require(&#x27;react-dom&#x27;).render
+
+  window.define = amd.define.bind(amd)
+  window.define.amd = true
+  window.reactSite.rootElement = root
+
+  let surl = window.reactSite.utils.standaloneURL(pathname)
+  amd.require([surl], function (page) {
+    var props = page.props
+
+    props.location = {
+      pathname: pathname,
+      search: &#x27;&#x27;
+    }
+    props.meta.ext = ext
+    props.meta.pathname = pathname
+    props.meta.filename = name
+    props.meta.title = metadata.title
+    props.meta.summary = metadata.summary
+    props.meta.date = metadata.date
+    props.content = content
+
+    render(React.createElement(window.reactSite.Main, {
+      component: page.component,
+      props: props
+    }), window.reactSite.rootElement)
+  })
+}
+" id="606062" class="coisas filterTreeFiles path path split slice load rawgit com min js coisas defaultNewFile haikunate resolve md &#x27;,
+       split map replace toUpperCase join toISOString split body style setProperty body style setProperty body style setProperty body style setProperty body style setProperty body style setProperty body style setProperty body style setProperty body style setProperty body style setProperty 
+ load surge sh js then module load com js then Body module exports createElement href googleapis com rel head appendChild coisas canPreview html md coisas generatePreview style padding attachShadow createElement innerHTML surge sh css appendChild createElement appendChild split slice split split slice join split slice join render define define bind define amd reactSite rootElement reactSite utils standaloneURL require props location meta ext meta pathname meta filename meta title title meta summary summary meta date date content createElement reactSite Main component reactSite rootElement" data-reactid="24"></window></article></div></div></main><footer class="footer" data-reactid="25"><p data-reactid="26">~</p></footer><script src="/bundle.js" data-reactid="27"></script></div></div></body></html>

@@ -1,0 +1,36 @@
+prose:
+  ignore:
+    - .nojekyll
+    - .travis.yml
+    - _config.yml
+    - index.js
+    - CNAME
+    - .gitignore
+    - package.json
+    - body.js
+    - helmet.js
+    - wrap.js
+    - convert-docx.fish
+    - xidel
+    - realpath
+    - blogue/index.js
+    - main.scss
+    - admin
+  media: media
+  metadata:
+    blogue:
+      - name: title
+        field:
+          element: text
+          label: title
+      - name: date
+        field:
+          element: text
+          label: date
+          help: Data em que este poste terá na lista de postes e na sua própria página. Deixe em branco para uma data automática.
+          placeholder: 26/02/1989
+      - name: summary
+        field:
+          element: textarea
+          label: summary
+          help: Isto aqui vai aparecer na lista de postes em /blogue. Deixe em branco para um valor automático.

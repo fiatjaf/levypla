@@ -1,0 +1,82 @@
+backend:
+  name: github
+  repo: fiatjaf/levypla
+  branch: master
+  base_url: https://steadfast-banana.glitch.me
+
+media_folder: media/
+public_folder: media/
+
+collections:
+  - name: blogue
+    label: post
+    folder: blogue
+    create: true
+    fields:
+      - label: title
+        name: title
+        widget: string
+        required: true
+      - label: date
+        name: date
+        widget: datetime
+        required: false
+      - label: summary
+        name: summary
+        widget: text
+        required: false
+      - label: image
+        name: image
+        widget: image
+        required: false
+      - label: body
+        name: body
+        widget: markdown
+  - name: livros-traduzidos
+    label: livros-traduzidos page
+    folder: livros-traduzidos
+    create: true
+    fields:
+      - label: title
+        name: title
+        widget: string
+        required: true
+      - label: body
+        name: body
+        widget: markdown
+  - name: sobre-mim
+    label: sobre-mim page
+    folder: sobre-mim
+    create: true
+    fields:
+      - label: title
+        name: title
+        widget: string
+        required: true
+      - label: body
+        name: body
+        widget: markdown
+  - name: servicos-linguisticos
+    label: servicos-linguisticos page
+    folder: servicos-linguisticos
+    create: true
+    fields:
+      - label: title
+        name: title
+        widget: string
+        required: true
+      - label: body
+        name: body
+        widget: markdown
+  - name: cursos
+    label: cursos page
+    folder: cursos
+    create: true
+    fields:
+      - label: title
+        name: title
+        widget: string
+        required: true
+      - label: body
+        name: body
+        widget: markdown
